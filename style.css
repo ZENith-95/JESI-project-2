@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: black;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./Assets/Images/bg-original.png);
+  background-size: cover;
+  color: white;
+  font-family: "PT Serif", serif;
+  font-weight: 600;
+}
+
+.container .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+
+.nav-logo{
+  padding: 0 2em;
+}
+
+.container .nav-bar .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.container .nav-bar .nav-links ul {
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  transition: 0.5s;
+  z-index: 11111;
+}
+
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid white;
+  transform: scale(2);
+  transition: 0.3s;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+ul li a::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #e36138;
+  border-radius: 10px;
+  transform: scale(o);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -111;
+}
+
+ul li a:hover {
+  color: black;
+}
+
+ul li a:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+ul li a:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.nav-links .btn {
+  background-color: #e36138;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  padding: 1em 2rem;
+  margin: 0 0 0 1em;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  width: 50%;
+}
+
+.left .right {
+  padding: 4rem;
+}
+
+.sub-header {
+  font-size: 2rem;
+  color: #e36138;
+}
+
+.header{
+  font-size: 2.5rem;
+  padding: 0 1 rem;
+  line-height:3.5rem ;
+}
+
+.header span{
+  color: #66b9a2;
+}
+
+.stats{
+  display: flex;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  padding-right: 2em;
+}
+
+.stat-num {
+  font-size: 3em;
+}
+
+.stat-copy{
+  padding: 0 1em;
+}
+
+.card {
+  position: relative;
+  top: 5em;
+  left: 8em;
+  transform: rotate(10deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 240px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  background-color: rgb(126, 51, 27);
+  background: linear-gradient(
+    120deg,
+    rgba(126, 51, 27, 0.4) 0%,
+    rgba(76, 70, 70, 0.3) 50%,
+    rgba(76, 70, 70, 0.3) 100%
+  );
+  padding: 2em;
+}
+
+.card img {
+  width: 15%;
+  opacity: 0.8;
+}
+
+.card .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.master-logo{
+ display: flex;
+ justify-content: flex-end;
+}
+
+.chip{
+  opacity: 0.5;
+}
+
+.network{
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.5;
+}
+
+.card-num , exp-date{
+opacity: 0.5;
+letter-spacing: 6px;
+text-align: left ;
+}
+
+.card-balance {
+  position: relative;
+  top: 12em;
+  transform: rotate(-5deg);
+  width: 300px;
+  height: 100px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  background: rgb(126, 51, 27);
+  background: linear-gradient(
+    120deg,
+    rgba(27, 126, 72, 0.4) 0%,
+    rgba(76, 70, 70, 0.3) 50%,
+    rgba(103, 185, 162, 0.3) 1000%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+
+.card-col {
+  font-weight: 300;
+  opacity: 0.7;
+  line-height: 1.8rem;
+}
+
+.card-title {
+  font-size: 12px;
+}
+
+/* Media queries  */
+@media (max-width: 900px){
+
+
+ul{
+  flex-direction: column;
+
+
+}
+ul li a{
+  padding: 1rem;
+  margin: 1rem
+}
+
+.nav-bar{
+  display: block;
+}
+
+.nav-links{
+  display: block;
+}
+
+.container{
+  flex-direction: column;
+}
+
+.col{
+  width: 1005;
+}
+.header{
+  font-size: 2em;
+}
+
+.card{
+  top: 0;
+  left: 0; 
+}
+.card-balance{
+  top: 0;
+}
+
+}
